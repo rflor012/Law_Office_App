@@ -1,0 +1,15 @@
+<h1>Welcome to the Employee Login Page for the Law Offices of Jose L. Flores</h1>
+
+<form action="/login" method="post">
+  <label>Username:</label>
+  <input type='text' name="username" />
+
+  <label>Password:</label>
+  <input type="password" name="password"/>
+
+  <button>Login!</button>
+</form>
+
+{{#if errorMessage}}
+  <div>{{ errorMessage}} </div>
+{{/if}}
