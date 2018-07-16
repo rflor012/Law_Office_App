@@ -1,8 +1,42 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+// Beginning of styles for the index.hbs section of website
+.logo{
+  background-position: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.main-title{
+  padding-top: 5px;
+}
+
+.disclaimer{
+  padding-top: 30px;
+}
+//end of styles for index.hbs///////////////////////////////
+// begin login styles//////////////////////////////////////
+.login-hero{
+  margin-bottom: 40px;
+}
+//end of login stylesheet
+//begin create page styles///////////////////////////////////
+.create-panel{
+  background-position: center;
+}
+//end of create page stylesheet
+//begin viewCase stylesheet
+.edit-button a{
+  color: white;
+  text-decoration: none;
+}
+
+.edit-button{
+  background-color: lightblue;
 }

@@ -1,0 +1,55 @@
+<div class="container-fluid ">
+  <h1>Create A New Client/Case</h1>
+  <form action="/create/client" method="post">
+    <div class="input-group create-panel ">
+      <div class="row ">
+        <div class="panel panel-default ">
+          <div class="panel-heading ">
+            <h3 class="panel-title ">Please fill out all fields</h3>
+          </div>
+          <div class="panel-body ">
+            <span class=" input-group-addon col-sm-3" id="basic-addon1">Name:</span>
+            <input id="name" name="theName" type="text" class="form-control" placeholder="First Name" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon2">Last Name:</span>
+            <input id="lastName" type="text" name="theLastName" type="text" class="form-control" placeholder="Last Name" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon3">DOB:</span>
+            <input id="dateOfBirth" type="text" name="theDOB" type="text" class="form-control" placeholder="Date of Birth" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon4">Case #:</span>
+            <input id="caseNumber" type="text" name="theCaseNumber" type="text" class="form-control" placeholder="Case Number" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon1">Case Type:</span>
+            <input id="caseType" type="text" name="theCaseType" class="form-control" placeholder="Case Type" aria-describedby="basic-addon1">
+
+            <!--Need to comeback later to this and try and get the drop down menu to return the values inside-->
+            <!-- <div class="form-group col-sm-3" id="basic-addon5">
+            <label for="caseType">Select case Type:</label>
+            <select class="form-control" id="caseType">
+              <option>Asylum</option>
+              <option>Criminal</option>
+              <option>Criminal Traffic</option>
+              <option>Family</option>
+            </select>
+          </div> -->
+
+
+            <span class="input-group-addon col-sm-3" id="basic-addon1">Phone Number:</span>
+            <input input id="phoneNumber" type="text" name="thePhoneNumber" class="form-control" placeholder="Phone Number" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon1">Address:</span>
+            <input id="address" type="text" name="theAddress" class="form-control" placeholder="Address" aria-describedby="basic-addon1">
+            <button>Create Client</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</form>
+</div>
+
+
+{{#if errorMessage}}
+<div>{{errorMessage}}</div>
+{{/if}}

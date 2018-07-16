@@ -1,14 +1,26 @@
-<h1>Welcome to the Employee Login Page for the Law Offices of Jose L. Flores</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <h1>Employee Login</h1>
+        <img class="logo" src="images/logojlf.jpg" />
+        <h4>"Quisieron enterrarnos, pero no sabían que éramos semilla"</h4>
+        <img class="login-hero" src="images/login-hero.jpeg" height="400px" />
 
-<form action="/login" method="post">
-  <label>Username:</label>
-  <input type='text' name="username" />
+        <form action="/login" method="post">
+          <label>Username:</label>
+          <input type='text' name="username" />
 
-  <label>Password:</label>
-  <input type="password" name="password"/>
+          <label>Password:</label>
+          <input type="password" name="password"/>
 
-  <button>Login!</button>
-</form>
+          <button>Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 {{#if errorMessage}}
 <div>{{errorMessage}}</div>

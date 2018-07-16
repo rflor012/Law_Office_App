@@ -2,12 +2,19 @@
 <html>
   <head>
     <title>{{title}}</title>
+    <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-
+      <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/">Home</a>
+        <a class="navbar-brand" href="https://portal.eoir.justice.gov/Disclaimer">EOIR Online Portal</a>
+        <a class="navbar-brand" href="https://www.aila.org/">AILA</a>
+        <a class="navbar-brand" href="https://www.floridabar.org/">Florida Bar Online</a>
+        <a class="navbar-brand" href="https://www.myflcourtaccess.com/">Florida E Filing Portal</a>
+        <a class="navbar-brand" href="/logout">Logout:{{User.username}}</a>
+      </nav>
     {{{body}}}
-
     <script src='/javascripts/script.js'></script>
   </body>
 </html>

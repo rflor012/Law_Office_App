@@ -1,0 +1,26 @@
+<h2 class="text-center">Viewing all Cases</h2>
+
+<div class="card-columns">
+{{#each allTheCases}}
+    <!-- <div class="row"> -->
+      <div class="text-center">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-center">{{this.name}} {{this.lastName}}</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Name: {{this.name}}</li>
+            <li class="list-group-item">Last Name: {{this.lastName}}</li>
+            <li class="list-group-item">DOB: {{this.dateOfBirth}}</li>
+            <li class="list-group-item">Case #: {{this.caseNumber}}</li>
+            <li class="list-group-item">Case Type: {{this.caseType}}</li>
+            <li class="list-group-item">Phone #: {{this.phoneNumber}}</li>
+            <li class="list-group-item">Address: {{this.address}}</li>
+            <li class="list-group-item">PaymentID: {{this.paymentID}}</li>
+            <button class="list-group-item edit-button"><a href="/client/:id/edit">Edit this Case/Client</a></button>
+            <button class="list-group-item edit-button"><a href="/payments/:id/view">View/Create Payment Schedule</a></button>
+          </ul>
+        </div>
+      </div>
+{{/each}}
+</div>

@@ -1,8 +1,31 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
+
+.logo {
+  background-position: center;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.main-title {
+  padding-top: 5px; }
+
+.disclaimer {
+  padding-top: 30px; }
+
+.login-hero {
+  margin-bottom: 40px; }
+
+.create-panel {
+  background-position: center; }
+
+.edit-button a {
+  color: white;
+  text-decoration: none; }
+
+.edit-button {
+  background-color: lightblue; }
 
 /*# sourceMappingURL=style.css.map */

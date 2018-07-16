@@ -52,10 +52,9 @@ userRouter.post("/login", passport.authenticate('local', {
   passReqToCallBack: true
 }));
 
-userRouter.get('/logout', (req, res, next) =>{
-  req.logout();
-  res.redirect('/login');
-});
-
+userRouter.get("/logout", (req, res, next) => {
+      req.logout();
+      res.redirect("/login");
+  });
 
 module.exports = userRouter;

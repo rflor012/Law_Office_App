@@ -2,9 +2,11 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 
 const caseSchema = new Schema({
+  name: String,
+  lastName: String,
+  dateOfBirth: String,
   caseNumber: String,
   caseType: String,
-  clientID: String,
   phoneNumber: String,
   address: String,
   paymentID: String
