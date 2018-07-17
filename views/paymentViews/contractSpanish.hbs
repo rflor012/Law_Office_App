@@ -1,0 +1,40 @@
+<div class="text-center">
+
+  <h1>Portal del Empleado - Contrato en Espanol</h1>
+  <img class="logo" src="/images/logojlf.jpg"/>
+  <h3>CONTRATO DE SERVICIOS LEGALES Y ACUERDO DE PAGOS</h3><br />
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="mx-auto text-justify spanish-contract">
+      <div>
+        <form action="/payments/{{this._id}}/updatedView" method="post">
+
+        Yo/Nosotros,<input type="text" name="name" value="{{theCase.name}}"/> <input type="text" name="lastName" value="{{theCase.lastName}}"/> (el Cliente), por este medio contratamos al abogado Jose L. Flores, de la firma de Las Oficinas de Jose L. Flores, P.A., para representarme/nos en los siguientes asuntos: <input type="text" name="caseNumber" value="{{theCase.caseNumber}}" />
+        <input type="text" name="caseType" value="{{theCase.caseType}}"/>
+        PAGOS: Como compensación por dichos servicios, El Cliente acuerda pagar al Abogado un total de <input type="text" name="totalRetainer" value=""/> el cual representa el pago total por la representación de caso, siendo este no reembolsable bajo ninguna circunstancia. Además, el Cliente
+        acuerda hacer pagos de la siguiente manera: <input type="text" name="initialPayment" value=""/>con vencimiento en: <input type="text" name="beginDate" value="" />, <input type="text" name="nextPaymentAmount" value=""/> con vencimiento en: <input type="text" name="nextPaymentDates" value=""/>
+        TASAS DE PRESENTACION Y GASTOS: La compensación antes mencionada por representación legal no incluye gastos relacionados a la preparación del caso. Ejemplo de gastos incluye, pero no están limitados a Tasas de Presentación ante la Corte o el Departamento
+        de Seguridad Interna (Homeland Security); llamadas de larga distancia; fotocopias; traducciones de documentos; servicios de mensajería (FEDEX); fotos; huellas dactilares, etc. Queda entendido que el Cliente es responsable por los gastos relacionados
+        con el caso incluyendo el pago de tasas gubernamentales y la traducción de documentos en lengua extranjera al Ingles. Los gastos estimados para este caso, incluye, pero puede exceder: Tasas de Presentación:_____________________________________________________
+        Federal Express, fotocopias, traducciones________________________________________ Llamadas de larga distancia____________________________________________________ RETIRO EN EL EVENTO DE FALTA DE PAGO: Queda entendido que los pagos tienen vencimiento
+        de acuerdo con la lista anterior. Queda entendido que si el Cliente incumple el acuerdo de pagos, establecido en la lista anterior, el Abogado puede solicitar su retiro de este caso, si ya ha sido presentado ante la Corte. Si el caso no está en
+        la Corte Judicial (por ejemplo, peticiones de Visas), el Abogado tiene el derecho de suspender sus acciones en el caso hasta que el pago sea recibido. RETRASO IMPUESTO POR AGENCIAS GUBERNAMENTALES: Queda entendido que el abogado trabajara diligentemente
+        en el caso. Sin embargo, el Cliente reconoce que en ocasiones pueden existir retrasos por parte del gobierno o la Corte, u otras agencias, lo cual no es falta del abogado y está fuera de su control. COOPERACION CON EL PERSONAL DE LA OFICINA LEGAL/LLAMADAS
+        TELEFONICAS: Al firmar este contrato, el Cliente reconoce que las ocupaciones del Abogado no le permiten estar disponible en el teléfono, cada vez que el Cliente llame. Asuntos rutinarios, por ejemplo, el estado de una solicitud o la fecha de
+        una audiencia, será atendido por el personal de la oficina. Asimismo, el Cliente se compromete a cooperar con el personal de la oficina. El Abogado no atenderá a nadie que llegue a la oficina sin previa cita. TRABAJO ADICIONAL/CAMBIO EN LAS CIRCUNSTANCIAS
+        DEL CASO: Queda entendido que este contrato es por el trabajo descrito en el primer párrafo. Si trabajo adicional es requerido, queda entendido que pagos adicionales pueden ser solicitados por el abogado. Además de esto y a menos que este mencionado
+        en el primer párrafo, este contrato no incluye Permiso de Trabajo, o apelaciones, o paquetes de Embajadas III y IV, o preparación de currículo vitae u otros trabajos misceláneos, por ejemplo, entrevistas de seguimiento o audiencias basadas en
+        inconvenientes que se presenten durante la entrevista/audiencia o programada por razón de que el cliente no presento los documentos requeridos. El Abogado discutirá con el Cliente sobre trabajo y gastos adicionales y pagos que podrían ser solicitados
+        por adelantado, antes de realizar dicho trabajo y gastos. Gastos y/o Tasas adicionales:___________________________________________________ ______________________________________________________________________ ________________________________________
+        __________________________________________________________________. UN CONTRATO POR SERVICIOS LEGALES NO ES GARANTIA DE UN RESULTADO ESPECIFICO. EL CONTRATO CON EL ABOGADO PARA PREPARAR TRABAJO Y PROVEER REPRESENTACION NO GARANTIZA RESULTADOS
+        ESPECIFICOS. Fechado _____________________________________en Miami, Florida. Cliente: ___________________, Abogado:____________________________
+        <div class="mx-auto">
+          <button class="edit-button" type='submit'>Save Contract to DataBase</button>
+          <button class="edit-button" type='submit'>Export Contract to Print</button>
+        </div>
+      </form>
+      </div>
+    </div>
+  </div>
+</div>

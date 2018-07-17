@@ -9,7 +9,7 @@ const caseSchema = new Schema({
   caseType: String,
   phoneNumber: String,
   address: String,
-  paymentID: String
+  paymentID: {type: Schema.Types.ObjectId, ref: 'Payment'},
 });
 
 const Case = mongoose.model("Case", caseSchema);
