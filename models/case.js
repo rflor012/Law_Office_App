@@ -9,7 +9,7 @@ const caseSchema = new Schema({
   caseType: String,
   phoneNumber: String,
   address: String,
-  payment: [{ type: Schema.Types.ObjectId, ref: 'Payment'}]
+  payment: { type: Schema.Types.ObjectId, ref: 'Payment'}
 });
 
 

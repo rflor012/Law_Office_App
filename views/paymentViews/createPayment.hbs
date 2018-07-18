@@ -1,6 +1,6 @@
 <div class="container-fluid ">
-  <h1>Create A New Payment Schedule for </h1>
-  <form action="/payments/:id/create" method="post">
+    <h1>Create A New Payment Schedule for {{theCase.name}} {{theCase.lastName}} </h1>
+    <form action="/payments/{{theCase._id}}/create" method="post">
     <div class="input-group create-panel ">
       <div class="row">
         <div class="panel panel-default ">

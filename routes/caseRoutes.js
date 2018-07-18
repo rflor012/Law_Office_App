@@ -57,7 +57,7 @@ caseRouter.get('/client/:id/edit', (req, res, next)=>{
   Case.findById(req.params.id)
   .then((theCase)=>{
     // console.log("==================== ID", req.params.id);
-    // console.log("====================", theCase);
+    console.log("====================", theCase);
     res.render('caseViews/editClient', {theCase: theCase});
   })
   .catch((err)=>{

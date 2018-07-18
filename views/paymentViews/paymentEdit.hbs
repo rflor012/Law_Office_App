@@ -1,0 +1,38 @@
+<div class="text-center">
+<div class="card-columns">
+<div class="card">
+  <div class="card-header">
+    <h2 class="text-center">{{theCase.name}} {{theCase.lastName}}</h2>
+    <h4 class="text-center">Edit payments for this Client/Case</h2>
+  </div>
+  <ul class="list-group list-group-flush text-center">
+    <form action="/client/{{theCase.payment._id}}/update" method="post">
+      <li class="list-group-item">
+        <label>Begin Date:</label>
+        <input type="text" name="beginDate" value="{{theCase.payment.beginDate}}" />
+      </li>
+      <li class="list-group-item">
+        <label>Total Retainer: </label>
+        <input type="text" name="totalRetainer" value="{{theCase.payment.totalRetainer}}" />
+      </li>
+      <li class="list-group-item">
+        <label>Initial Payment: </label>
+        <input type="text" name="initialPayment" value="{{theCase.payment.initialPayment}}" />
+      </li>
+      <li class="list-group-item">
+        <label>Total Payments:  </label>
+        <input type="text" name="totalPayments" value="{{theCase.payment.totalPayments}}" />
+      </li>
+      <li class="list-group-item">
+        <label>Next Payment Dates: </label>
+        <input type="text" name="nextPaymentDates" value="{{theCase.payment.nextPaymentDates}}" />
+      </li>
+      <li class="list-group-item">
+        <label>Next Payment Amount: </label>
+        <input type="text" name="nextPaymentAmount" value="{{theCase.payment.nextPaymentAmount}}" />
+      </li>
+        <button class="edit-button" type="submit">Save Changes</button>
+      </ul>
+    </div>
+    </div>
+  </form>

@@ -1,0 +1,18 @@
+<div class="card-columns">
+      <div class="text-center">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="text-center">Viewing Payment Information for {{theCase.name}} {{theCase.lastName}}</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Contract Begin Date: {{theCase.payment.beginDate}}</li>
+            <li class="list-group-item">Total Retainer: {{theCase.payment.totalRetainer}}</li>
+            <li class="list-group-item">Initial Payment: {{theCase.payment.initialPayment}}</li>
+            <li class="list-group-item">Total Payments: {{theCase.payment.totalPayments}}</li>
+            <li class="list-group-item">Next Payment Dates: {{theCase.payment.nextPaymentDates}}</li>
+            <li class="list-group-item">Next Payment Amount: {{theCase.payment.nextPaymentAmount}}</li>
+            <button class="edit-button"><a href="/payments/{{theCase._id}}/edit">Edit this Payment Schedule</a></button>
+          </ul>
+        </div>
+      </div>
+</div>
