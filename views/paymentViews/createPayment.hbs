@@ -1,1 +1,55 @@
-WAtch us make payments
+<div class="container-fluid ">
+  <h1>Create A New Payment Schedule for </h1>
+  <form action="/payments/:id/create" method="post">
+    <div class="input-group create-panel ">
+      <div class="row">
+        <div class="panel panel-default ">
+          <div class="panel-heading ">
+            <h3 class="panel-title ">Please fill out all fields</h3>
+          </div>
+          <div class="panel-body ">
+            <span class=" input-group-addon col-sm-3" id="basic-addon1">Contract Begin Date:</span>
+            <input id="beginDate" name="theDate" type="text" class="form-control" placeholder="Begin Date" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon2">Total Retainer:</span>
+            <input id="totalRetainer" type="text" name="theTotalRetainer" type="text" class="form-control" placeholder="Total Retainer" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon3">Total Payments: </span>
+            <input id="totalPayments" type="text" name="theTotalPayments" type="text" class="form-control" placeholder="Total Payments" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon4">Next Payment Dates:</span>
+            <input id="nextPaymentDates" type="text" name="nextPayDates" type="text" class="form-control" placeholder="Next Payment Date" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon1">Next Payment Amount:</span>
+            <input id="nextPaymentAmount" type="text" name="nextPayAmount" class="form-control" placeholder="Next Payment Amount" aria-describedby="basic-addon1">
+
+            <!--Need to comeback later to this and try and get the drop down menu to return the values inside-->
+            <!-- <div class="form-group col-sm-3" id="basic-addon5">
+            <label for="caseType">Select case Type:</label>
+            <select class="form-control" id="caseType">
+              <option>Asylum</option>
+              <option>Criminal</option>
+              <option>Criminal Traffic</option>
+              <option>Family</option>
+            </select>
+          </div> -->
+
+
+            <span class="input-group-addon col-sm-3" id="basic-addon1">Initial Payment:</span>
+            <input input id="initialPayment" type="text" name="theInitialPayment" class="form-control" placeholder="Initial Payment" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon1">Current Balance After First Payment: </span>
+            <input id="currentBalance" type="text" name="theBalance" class="form-control" placeholder="Balance After First Payment" aria-describedby="basic-addon1">
+            <button>Create Payment Schedule</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</form>
+</div>
+
+
+{{#if errorMessage}}
+<div>{{errorMessage}}</div>
+{{/if}}

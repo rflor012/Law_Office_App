@@ -8,10 +8,6 @@ const paymentSchema = new Schema ({
   nextPaymentDates: [String],
   nextPaymentAmount: Number,
   initialPayment: Number,
-  currentBalance: Number,
-  remainingPayments: Number,
-  delinquentPayments: Number,
-  delinquentPaymentDates: String,
 });
 
 const Payment = mongoose.model("Payment", paymentSchema);

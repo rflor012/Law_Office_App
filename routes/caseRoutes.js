@@ -15,11 +15,10 @@ caseRouter.post('/create/client', (req, res, next) => {
   const theDOB        = req.body.theDOB;
   const theCaseNumber = req.body.theCaseNumber;
   const theCaseType = req.body.theCaseType;
-  const theClientID = req.body.theClientID;
   const thePhoneNumber = req.body.thePhoneNumber;
   const theAddress = req.body.theAddress;
 
-  if (theName === "" || theLastName === "" || theDOB === "" || theCaseNumber === "" || theCaseType === "" || theClientID === "" || thePhoneNumber === "" || theAddress === "") {
+  if (theName === "" || theLastName === "" || theDOB === "" || theCaseNumber === "" || theCaseType === "" || thePhoneNumber === "" || theAddress === "") {
     res.render('caseViews/createClient', {errorMessage: 'Please fill in all fields'});
     return;
   }
@@ -29,7 +28,7 @@ caseRouter.post('/create/client', (req, res, next) => {
       res.render('caseViews/createClient', {errorMessage: `Duplicate case number encountered: ${theCaseNumber}`});
       return;
     }
-  Case.create({name: theName, lastName: theLastName, dateOfBirth: theDOB, caseNumber: theCaseNumber, caseType: theCaseType, clientID: theClientID, phoneNumber: thePhoneNumber, address: theAddress})
+  Case.create({name: theName, lastName: theLastName, dateOfBirth: theDOB, caseNumber: theCaseNumber, caseType: theCaseType, phoneNumber: thePhoneNumber, address: theAddress})
   .then((response)=>{
     res.redirect('/client/all');
   })
@@ -57,9 +56,8 @@ caseRouter.get('/client/:id/edit', (req, res, next)=>{
   //looking into the case model to pull a case via obj. ID
   Case.findById(req.params.id)
   .then((theCase)=>{
-    console.log("==================== ID", req.params.id);
-    console.log("====================", theCase);
-    console.log("=Hey look im learning :)==");
+    // console.log("==================== ID", req.params.id);
+    // console.log("====================", theCase);
     res.render('caseViews/editClient', {theCase: theCase});
   })
   .catch((err)=>{
@@ -71,12 +69,12 @@ caseRouter.post('/client/:id/update', (req, res, next)=>{
   Case.findByIdAndUpdate(req.params.id, {
     name: req.body.name,
     lastName: req.body.lastName,
-    DOB: req.body.dateOfBirth,
+    dateOfBirth: req.body.dateOfBirth,
     caseNumber: req.body.caseNumber,
     caseType: req.body.caseType,
     phoneNumber: req.body.phoneNumber,
     address: req.body.address,
-    payment: req.body.payment
+    //need to include the payment portion here when I have that figured out
   })
   .then((theCase)=>{
     res.redirect('/client/all');
