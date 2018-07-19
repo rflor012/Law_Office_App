@@ -127,10 +127,11 @@ paymentRouter.post('/payments/updatedContract', (req, res, next)=>{
 
 paymentRouter.get('/payments/:id/view/contract',(req, res, next)=>{
     Case.findById(req.params.id)
-    .populate('contract')
     .then((theCase)=>{
-      console.log("///////////////////////////////////////", theCase);
-      res.render('paymentViews/contractDetails', {theCase: theCase});
+      Contract.findOne({caseID: req.params.id})
+      .then((theContract)=>{
+        res.render('paymentViews/contractDetails', {theCase: theCase, theContract: theContract});
+      });
     })
     .catch((err)=>{
       next(err);
