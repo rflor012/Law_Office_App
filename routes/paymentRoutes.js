@@ -3,6 +3,7 @@ const paymentRouter = express.Router();
 const Case          = require('../models/case');
 const User          = require('../models/user');
 const Payment       = require('../models/payment');
+const Contract      = require('../models/contract');
 const bcrypt        = require('bcryptjs');
 const passport      = require('passport');
 
@@ -64,7 +65,6 @@ paymentRouter.get('/payments/:id/edit', (req, res, next)=>{
   Case.findById(req.params.id)
   .populate('payment')
   .then((theCase)=>{
-    console.log("-------------------------------------------------", theCase.payment._id);
     res.render('paymentViews/paymentEdit', {theCase});
   })
   .catch((err)=>{
@@ -93,16 +93,51 @@ paymentRouter.post('/payments/:id/update', (req, res, next)=>{
 
 paymentRouter.get('/payments/:id/create/contract', (req, res, next)=>{
   Case.findById(req.params.id)
+  .populate('payment')
+  // .populate('contract')
   .then((theCase)=>{
 
-  res.render('paymentViews/contractSpanish', {theCase: theCase});
+  res.render('paymentViews/contractSpanish', {theCase});
 
   })
   .catch((err)=>{
     next(err);
   });
 });
+//The above route is going to populate the contract with values from theCase and ref's to Payment model. Hence populate.
 
+//The bottom is supposed to grab this contract with the populated fields and add to a collection......
+
+paymentRouter.post('/payments/updatedContract', (req, res, next)=>{
+  const theContract ={};
+
+  theContract.contract = req.body.theContract;
+  theContract.caseID   = req.body.theCaseID;
+
+
+  Contract.create(theContract)
+  .then((createdContract)=>{
+    res.json(createdContract);
+  })
+  .catch((errorMessage)=>{
+    next(errorMessage);
+  });
+});
+//have the words stored somewhere on the server,
+
+paymentRouter.get('/payments/:id/view/contract',(req, res, next)=>{
+    Case.findById(req.params.id)
+    .populate('contract')
+    .then((theCase)=>{
+      console.log("///////////////////////////////////////", theCase);
+      res.render('paymentViews/contractDetails', {theCase: theCase});
+    })
+    .catch((err)=>{
+      next(err);
+    });
+  });
+
+// need help displaying the contracts on the page now.
 
 paymentRouter.get('/payments/all', (req, res, next)=>{
   res.render("paymentViews/paymentsIndex");

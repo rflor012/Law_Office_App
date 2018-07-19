@@ -20,9 +20,7 @@ const ensureLogin  = require('connect-ensure-login');
 const User         = require('./models/user');
 const Case         = require('./models/case');
 const Payment      = require('./models/payment');
-
-
-
+const Contract     = require('./models/contract');
 
 mongoose.Promise = Promise;
 mongoose

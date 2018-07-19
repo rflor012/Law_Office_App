@@ -1,6 +1,7 @@
 const express   = require('express');
 const userRouter= express.Router();
 const User      = require('../models/user');
+const Contract  = require('../models/contract');
 const bcrypt    = require('bcryptjs');
 const passport  = require('passport');
 

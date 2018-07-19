@@ -2,6 +2,7 @@ const express   = require('express');
 const caseRouter= express.Router();
 const Case      = require('../models/case');
 const Payment   = require('../models/payment');
+const Contract  = require('../models/contract');
 const bcrypt    = require('bcryptjs');
 const passport  = require('passport');
 
@@ -43,6 +44,7 @@ caseRouter.get('/client/all', (req, res, next) => {
   Case.find()
   .populate('payment')
   .then((allTheCases)=>{
+
   res.render('caseViews/viewCases', {allTheCases});
   })
   .catch((err)=>{

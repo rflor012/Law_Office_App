@@ -26,9 +26,10 @@ a {
   text-decoration: none; }
 
 .edit-button {
-  background-color: lightblue; }
+  background-color: lightblue;
+  margin-top: 20px; }
 
-.spanish-contract {
+#theContractText {
   font-size: 15px;
   margin-bottom: 30px;
   width: 800px; }

@@ -1,22 +1,30 @@
-<h1>Create an Employee Account</h1>
-
 <form action="/signup" method="post">
-  <label for="username">Username:</label>
-  <input id="username" type="text" name="theUsername"/>
-
-  <label for="password">Password:</label>
-  <input id="password" type="password" name="thePassword"/>
-
-  <label for="email">Email:</label>
-  <input id="email" type='text' name="theEmail"/>
-
-  <label for="role">Employee Role:</label>
-  <input id="role" type="text" name="theRole" />
-  
-
-  <button>Create Account</button>
-
+<div class="card">
+  <div class="card mx-auto">
+    <div class="card-header">
+      <h2 class="text-center">Create an Employee Account</h2>
+    </div>
+    <ul class="list-group list-group-flush text-center">
+      <li class="list-group list-group-flush text-center">
+          <label for="username">Username:</label>
+          <input id="username" type="text" name="theUsername"/>
+      </li>
+      <li class="list-group list-group-flush text-center">
+        <label for="password">Password:</label>
+        <input id="password" type="password" name="thePassword"/>
+      </li>
+      <li class="list-group list-group-flush text-center">
+        <label for="email">Email:</label>
+        <input id="email" type='text' name="theEmail"/>
+      </li>
+      <li class="list-group list-group-flush text-center">
+          <label for="role">Employee Role:</label>
+          <input id="role" type="text" name="theRole" />
+      </li>
+        <button class="edit-button">Create Account</button>
+      </ul>
 </form>
+</div>
 
 {{#if errorMessage}}
 <div>{{errorMessage}}</div>
