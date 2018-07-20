@@ -3,6 +3,7 @@ const caseRouter= express.Router();
 const Case      = require('../models/case');
 const Payment   = require('../models/payment');
 const Contract  = require('../models/contract');
+const User      = require('../models/user');
 const bcrypt    = require('bcryptjs');
 const passport  = require('passport');
 

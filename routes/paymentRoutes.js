@@ -38,7 +38,7 @@ paymentRouter.post('/payments/:id/create', (req, res, next)=>{
     Case.findByIdAndUpdate(req.params.id, {payment: createdPayment._id})
     .then(()=>{
       res.redirect('/client/all');
-    })
+    }) 
     .catch((errorMessage)=>{
       next(errorMessage);
     });
