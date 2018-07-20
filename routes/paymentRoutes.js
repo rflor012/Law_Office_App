@@ -6,13 +6,14 @@ const Payment       = require('../models/payment');
 const Contract      = require('../models/contract');
 const bcrypt        = require('bcryptjs');
 const passport      = require('passport');
+const ensureLogin = require('connect-ensure-login');
 
 
 
 paymentRouter.get('/payments/:id/create', (req, res, next)=>{
   Case.findById(req.params.id)
   .then((theCase)=>{
-    res.render('paymentViews/createPayment', {theCase});
+    res.render('paymentViews/createPayment', {theCase:theCase, theUser: req.user});
   })
   .catch((err)=>{
     next(err);
@@ -38,7 +39,7 @@ paymentRouter.post('/payments/:id/create', (req, res, next)=>{
     Case.findByIdAndUpdate(req.params.id, {payment: createdPayment._id})
     .then(()=>{
       res.redirect('/client/all');
-    }) 
+    })
     .catch((errorMessage)=>{
       next(errorMessage);
     });
@@ -54,7 +55,7 @@ paymentRouter.get('/payments/:id/view/paymentDetails', (req, res, next)=>{
   Case.findById(req.params.id)
   .populate('payment')
   .then((theCase)=>{
-    res.render('paymentViews/paymentDetails', {theCase: theCase});
+    res.render('paymentViews/paymentDetails', {theCase: theCase, theUser: req.user});
   })
   .catch((err)=>{
     next(err);
@@ -65,7 +66,7 @@ paymentRouter.get('/payments/:id/edit', (req, res, next)=>{
   Case.findById(req.params.id)
   .populate('payment')
   .then((theCase)=>{
-    res.render('paymentViews/paymentEdit', {theCase});
+    res.render('paymentViews/paymentEdit', {theCase:theCase, theUser: req.user});
   })
   .catch((err)=>{
     next(err);
@@ -97,7 +98,7 @@ paymentRouter.get('/payments/:id/create/contract', (req, res, next)=>{
   // .populate('contract')
   .then((theCase)=>{
 
-  res.render('paymentViews/contractSpanish', {theCase});
+  res.render('paymentViews/contractSpanish', {theCase:theCase, theUser: req.user});
 
   })
   .catch((err)=>{
@@ -130,7 +131,7 @@ paymentRouter.get('/payments/:id/view/contract',(req, res, next)=>{
     .then((theCase)=>{
       Contract.findOne({caseID: req.params.id})
       .then((theContract)=>{
-        res.render('paymentViews/contractDetails', {theCase: theCase, theContract: theContract});
+        res.render('paymentViews/contractDetails', {theCase: theCase, theContract: theContract, theUser: req.user});
       });
     })
     .catch((err)=>{

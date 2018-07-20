@@ -6,9 +6,10 @@ const Contract  = require('../models/contract');
 const User      = require('../models/user');
 const bcrypt    = require('bcryptjs');
 const passport  = require('passport');
+const ensureLogin = require('connect-ensure-login');
 
-caseRouter.get('/create/client', (req, res, next)=>{
-  res.render('caseViews/createClient');
+caseRouter.get('/create/client', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
+  res.render('caseViews/createClient', {theUser: req.user});
 });
 
 caseRouter.post('/create/client', (req, res, next) => {
@@ -41,12 +42,12 @@ caseRouter.post('/create/client', (req, res, next) => {
   });
 });
 
-caseRouter.get('/client/all', (req, res, next) => {
+caseRouter.get('/client/all', ensureLogin.ensureLoggedIn(),  (req, res, next) => {
   Case.find()
   .populate('payment')
   .then((allTheCases)=>{
 
-  res.render('caseViews/viewCases', {allTheCases});
+  res.render('caseViews/viewCases', {allTheCases: allTheCases, theUser: req.user});
   })
   .catch((err)=>{
     next(err);
@@ -61,7 +62,7 @@ caseRouter.get('/client/:id/edit', (req, res, next)=>{
   .then((theCase)=>{
     // console.log("==================== ID", req.params.id);
     console.log("====================", theCase);
-    res.render('caseViews/editClient', {theCase: theCase});
+    res.render('caseViews/editClient', {theCase: theCase, theUser: req.user});
   })
   .catch((err)=>{
     next(err);
