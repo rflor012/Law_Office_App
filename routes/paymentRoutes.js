@@ -10,7 +10,7 @@ const ensureLogin = require('connect-ensure-login');
 
 
 
-paymentRouter.get('/payments/:id/create', (req, res, next)=>{
+paymentRouter.get('/payments/:id/create', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
   Case.findById(req.params.id)
   .then((theCase)=>{
     res.render('paymentViews/createPayment', {theCase:theCase, theUser: req.user});
@@ -51,7 +51,7 @@ paymentRouter.post('/payments/:id/create', (req, res, next)=>{
 });
 
 
-paymentRouter.get('/payments/:id/view/paymentDetails', (req, res, next)=>{
+paymentRouter.get('/payments/:id/view/paymentDetails', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
   Case.findById(req.params.id)
   .populate('payment')
   .then((theCase)=>{
@@ -62,7 +62,7 @@ paymentRouter.get('/payments/:id/view/paymentDetails', (req, res, next)=>{
   });
 });
 //router get for edit
-paymentRouter.get('/payments/:id/edit', (req, res, next)=>{
+paymentRouter.get('/payments/:id/edit', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
   Case.findById(req.params.id)
   .populate('payment')
   .then((theCase)=>{
@@ -92,7 +92,7 @@ paymentRouter.post('/payments/:id/update', (req, res, next)=>{
 //having issues here with updating the DB entries.
 
 
-paymentRouter.get('/payments/:id/create/contract', (req, res, next)=>{
+paymentRouter.get('/payments/:id/create/contract', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
   Case.findById(req.params.id)
   .populate('payment')
   // .populate('contract')
@@ -126,7 +126,7 @@ paymentRouter.post('/payments/updatedContract', (req, res, next)=>{
 });
 //have the words stored somewhere on the server,
 
-paymentRouter.get('/payments/:id/view/contract',(req, res, next)=>{
+paymentRouter.get('/payments/:id/view/contract', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
     Case.findById(req.params.id)
     .then((theCase)=>{
       Contract.findOne({caseID: req.params.id})
@@ -141,7 +141,7 @@ paymentRouter.get('/payments/:id/view/contract',(req, res, next)=>{
 
 // need help displaying the contracts on the page now.
 
-paymentRouter.get('/payments/all', (req, res, next)=>{
+paymentRouter.get('/payments/all', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
   res.render("paymentViews/paymentsIndex");
 });
 
