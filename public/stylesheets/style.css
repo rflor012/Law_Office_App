@@ -37,4 +37,9 @@ a {
 .card-styling {
   background-color: #053d60; }
 
+.peopleCarouselImg img {
+  width: auto;
+  height: 500px;
+  max-height: 500px; }
+
 /*# sourceMappingURL=style.css.map */
