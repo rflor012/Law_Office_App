@@ -14,14 +14,17 @@
             <span class="input-group-addon col-sm-3" id="basic-addon2">Total Retainer:</span>
             <input id="totalRetainer" type="text" name="theTotalRetainer" type="text" class="form-control" placeholder="Total Retainer" aria-describedby="basic-addon1">
 
-            <span class="input-group-addon col-sm-3" id="basic-addon3">Total Payments: </span>
+            <span class="input-group-addon col-sm-3" id="basic-addon1">Initial Payment:</span>
+            <input input id="initialPayment" type="text" name="theInitialPayment" class="form-control" placeholder="Initial Payment" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon1">Next Payment Amount:</span>
+            <input id="nextPaymentAmount" type="text" name="nextPayAmount" class="form-control" placeholder="Next Payment Amount" aria-describedby="basic-addon1">
+
+            <span class="input-group-addon col-sm-3" id="basic-addon3">Total Payments until Paid in Full: </span>
             <input id="totalPayments" type="text" name="theTotalPayments" type="text" class="form-control" placeholder="Total Payments" aria-describedby="basic-addon1">
 
             <span class="input-group-addon col-sm-3" id="basic-addon4">Next Payment Dates:</span>
             <input id="nextPaymentDates" type="text" name="nextPayDates" type="text" class="form-control" placeholder="Next Payment Date" aria-describedby="basic-addon1">
-
-            <span class="input-group-addon col-sm-3" id="basic-addon1">Next Payment Amount:</span>
-            <input id="nextPaymentAmount" type="text" name="nextPayAmount" class="form-control" placeholder="Next Payment Amount" aria-describedby="basic-addon1">
 
             <!--Need to comeback later to this and try and get the drop down menu to return the values inside-->
             <!-- <div class="form-group col-sm-3" id="basic-addon5">
@@ -34,13 +37,7 @@
             </select>
           </div> -->
 
-
-            <span class="input-group-addon col-sm-3" id="basic-addon1">Initial Payment:</span>
-            <input input id="initialPayment" type="text" name="theInitialPayment" class="form-control" placeholder="Initial Payment" aria-describedby="basic-addon1">
-
-            <span class="input-group-addon col-sm-3" id="basic-addon1">Current Balance After First Payment: </span>
-            <input id="currentBalance" type="text" name="theBalance" class="form-control" placeholder="Balance After First Payment" aria-describedby="basic-addon1">
-            <button>Create Payment Schedule</button>
+            <button onclick="redBack()">Create Payment Schedule</button>
           </div>
         </div>
       </div>

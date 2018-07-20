@@ -5,10 +5,11 @@
 </div>
 <div class="container-fluid">
   <div class="row">
-    <div id="theContractText" class="mx-auto">
-      Yo/Nosotros, {{theCase.name}} {{theCase.lastName}}, (el Cliente), por este medio contratamos al abogado Jose L. Flores, de la firma de Las Oficinas de Jose L. Flores, P.A., para representarme/nos en los siguientes asuntos: {{theCase.caseNumber}} {{theCase.caseType}}
-      PAGOS: Como compensación por dichos servicios, El Cliente acuerda pagar al Abogado un total de {{theCase.payment.totalRetainer}} el cual representa el pago total por la representación de caso, siendo este no reembolsable bajo ninguna circunstancia.
-      Además, el Cliente acuerda hacer pagos de la siguiente manera: {{theCase.payment.initialPayment}} con vencimiento en: {{theCase.payment.beginDate}}, {{theCase.payment.nextPaymentAmount}} con vencimiento en: {{theCase.payment.nextPaymentDates}}.
+    <div id="theContractText" class="mx-auto text-justify">
+      Yo/Nosotros, {{theCase.name}} {{theCase.lastName}}, (el Cliente), por este medio contratamos al abogado Jose L. Flores, de la firma de Las Oficinas de Jose L. Flores, P.A., para representarme/nos en los siguientes asuntos:__{{theCase.caseNumber}}__
+      ______{{theCase.caseType}}____________________
+      PAGOS: Como compensación por dichos servicios, El Cliente acuerda pagar al Abogado un total de $ ___{{theCase.payment.totalRetainer}}__ el cual representa el pago total por la representación de caso, siendo este no reembolsable bajo ninguna circunstancia.
+      Además, el Cliente acuerda hacer pagos de la siguiente manera: $______{{theCase.payment.initialPayment}}___ con vencimiento en: {{theCase.payment.beginDate}}, $____{{theCase.payment.nextPaymentAmount}}__ con vencimiento en:____{{theCase.payment.nextPaymentDates}}__.
       TASAS DE PRESENTACION Y GASTOS: La compensación antes mencionada por representación legal no incluye gastos relacionados a la preparación del caso. Ejemplo de gastos incluye, pero no están limitados a Tasas de Presentación ante la Corte o el Departamento
       de Seguridad Interna (Homeland Security); llamadas de larga distancia; fotocopias; traducciones de documentos; servicios de mensajería (FEDEX); fotos; huellas dactilares, etc. Queda entendido que el Cliente es responsable por los gastos relacionados
       con el caso incluyendo el pago de tasas gubernamentales y la traducción de documentos en lengua extranjera al Ingles. Los gastos estimados para este caso, incluye, pero puede exceder: Tasas de Presentación:_____________________________________________________
@@ -21,7 +22,7 @@
       DEL CASO: Queda entendido que este contrato es por el trabajo descrito en el primer párrafo. Si trabajo adicional es requerido, queda entendido que pagos adicionales pueden ser solicitados por el abogado. Además de esto y a menos que este mencionado
       en el primer párrafo, este contrato no incluye Permiso de Trabajo, o apelaciones, o paquetes de Embajadas III y IV, o preparación de currículo vitae u otros trabajos misceláneos, por ejemplo, entrevistas de seguimiento o audiencias basadas en inconvenientes
       que se presenten durante la entrevista/audiencia o programada por razón de que el cliente no presento los documentos requeridos. El Abogado discutirá con el Cliente sobre trabajo y gastos adicionales y pagos que podrían ser solicitados por adelantado,
-      antes de realizar dicho trabajo y gastos. Gastos y/o Tasas adicionales:___________________________________________________ ______________________________________________________________________ ________________________________________ __________________________________________________________________.
+      antes de realizar dicho trabajo y gastos. Gastos y/o Tasas adicionales:___________________________________________________ __________________________________________________________________________.
       UN CONTRATO POR SERVICIOS LEGALES NO ES GARANTIA DE UN RESULTADO ESPECIFICO. EL CONTRATO CON EL ABOGADO PARA PREPARAR TRABAJO Y PROVEER REPRESENTACION NO GARANTIZA RESULTADOS ESPECIFICOS. Fechado _____________________________________en Miami, Florida.
       Cliente: ___________________, Abogado:____________________________
     </div>

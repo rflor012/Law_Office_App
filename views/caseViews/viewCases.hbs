@@ -6,7 +6,6 @@
 
 <div class="card-columns">
 {{#each allTheCases}}
-    <!-- <div class="row"> -->
       <div class="text-center">
         <div class="card">
           <div class="card-header">
@@ -20,7 +19,7 @@
             <li class="list-group-item">Case Type: {{this.caseType}}</li>
             <li class="list-group-item">Phone #: {{this.phoneNumber}}</li>
             <li class="list-group-item">Address: {{this.address}}</li>
-            <li class="list-group-item">Payment Object Key: {{this.payment._id}} </li>
+            <li id="casepay" class="list-group-item">Payment Object Key: {{this.payment._id}} </li>
             <button class="list-group-item edit-button"><a href="/client/{{this._id}}/edit">Edit this Case/Client</a></button>
             <button class="list-group-item edit-button"><a href="/payments/{{this._id}}/view/contract">View this Contract</a></button>
             <button class="list-group-item edit-button"><a href="/payments/{{this._id}}/view/paymentDetails">View Payment Details</a></button>

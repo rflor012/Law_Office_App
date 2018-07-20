@@ -1,3 +1,8 @@
+function redBack(){
+  var element = document.getElementById('casepay');
+  element.classList.toggle('bg-danger text-white');
+}
+
 
 $(".the-contract-button").click(function(){
 const newContract = {};
