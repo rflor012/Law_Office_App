@@ -87,6 +87,16 @@ caseRouter.post('/client/:id/update', (req, res, next)=>{
   });
 });
 
+caseRouter.post('/client/:id/delete', (req, res, next)=>{
+  Case.findByIdAndRemove(req.params.id)
+  .then((response)=>{
+    res.redirect('/client/all');
+  })
+  .catch((err)=>{
+    next(err);
+  });
+});
+
 
 
 

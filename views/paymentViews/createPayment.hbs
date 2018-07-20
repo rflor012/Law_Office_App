@@ -1,5 +1,5 @@
-<div class="container-fluid ">
-    <h1>Create A New Payment Schedule for {{theCase.name}} {{theCase.lastName}} </h1>
+<div class="container-fluid">
+    <h1 class="card-styling text-white">Create A New Payment Schedule for {{theCase.name}} {{theCase.lastName}} </h1>
     <form action="/payments/{{theCase._id}}/create" method="post">
     <div class="input-group create-panel ">
       <div class="row">
@@ -7,7 +7,7 @@
           <div class="panel-heading ">
             <h3 class="panel-title ">Please fill out all fields</h3>
           </div>
-          <div class="panel-body ">
+          <div class="panel-body">
             <span class=" input-group-addon col-sm-3" id="basic-addon1">Contract Begin Date:</span>
             <input id="beginDate" name="theDate" type="text" class="form-control" placeholder="Begin Date" aria-describedby="basic-addon1">
 
