@@ -6,7 +6,7 @@ const bcrypt    = require('bcryptjs');
 const passport  = require('passport');
 
 userRouter.get('/signup', (req, res, next)=>{
-  res.render('userViews/signupPage');
+  res.render('userViews/signupPage', {theUser: req.user});
 });
 
 userRouter.post('/signup', (req, res, next)=>{
