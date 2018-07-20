@@ -4,8 +4,9 @@ const User      = require('../models/user');
 const Contract  = require('../models/contract');
 const bcrypt    = require('bcryptjs');
 const passport  = require('passport');
+const ensureLogin = require('connect-ensure-login');
 
-userRouter.get('/signup', (req, res, next)=>{
+userRouter.get('/signup', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
   res.render('userViews/signupPage', {theUser: req.user});
 });
 

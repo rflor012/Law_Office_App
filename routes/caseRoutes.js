@@ -56,7 +56,7 @@ caseRouter.get('/client/all', ensureLogin.ensureLoggedIn(),  (req, res, next) =>
 
 
 //route to edit a client. This can be clicked on in the View Cases view.
-caseRouter.get('/client/:id/edit', (req, res, next)=>{
+caseRouter.get('/client/:id/edit', ensureLogin.ensureLoggedIn(), (req, res, next)=>{
   //looking into the case model to pull a case via obj. ID
   Case.findById(req.params.id)
   .then((theCase)=>{
